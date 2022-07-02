@@ -1,11 +1,11 @@
 import React from 'react';
 import components from '@/utils/components.json';
 import { Box, Flex, Heading, Input, SearchIcon, Text } from 'native-base';
-import { ComponentList } from './ComponentList';
+import { Draggable } from 'react-beautiful-dnd';
 
 const LeftSidebar = () => {
   return (
-    <Flex align='center' bg='coolGray.700' h='100vh' p='5'>
+    <Flex align='center' bg='coolGray.700' h='100vh' p='5' w={350}>
       <Box>
         <Input
           placeholder='Search component...'
@@ -21,8 +21,24 @@ const LeftSidebar = () => {
               {category}
             </Heading>
             <Box>
-              {Object.values(components)[idx].map(component => (
-                <ComponentList key={component} component={component} />
+              {Object.values(components)[idx].map((component, index) => (
+                <Draggable
+                  key={component}
+                  draggableId={component}
+                  index={index}
+                >
+                  {(provided, snapshot) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <Box w='full' p='2' my='2' bg='cyan.800' zIndex='9'>
+                        <Text color='white'>{component}</Text>
+                      </Box>
+                    </div>
+                  )}
+                </Draggable>
               ))}
             </Box>
           </Box>
