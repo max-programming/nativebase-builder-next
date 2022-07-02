@@ -1,5 +1,6 @@
 import { LeftSidebar } from '@/components/LeftSidebar';
 import { Navbar } from '@/components/Navbar';
+import RightSidebar from '@/components/rightSidebar';
 import { Box, Flex, Center, Heading } from 'native-base';
 import React from 'react';
 
@@ -18,7 +19,9 @@ const HomePage = () => {
             </Heading>
           </Center>
         </Box>
-        <Box flex={1}></Box>
+        <Box flex={1}>
+          <RightSidebar />
+        </Box>
       </Flex>
     </>
   );
