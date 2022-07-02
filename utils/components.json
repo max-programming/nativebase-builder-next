@@ -1,6 +1,7 @@
 {
   "Layout": [
     "AspectRatio",
+    "Button",
     "Box",
     "Center",
     "Container",
@@ -11,7 +12,6 @@
     "ZStack"
   ],
   "Forms": [
-    "Button",
     "Pressable",
     "Checkbox",
     "FormControl",
