@@ -1,0 +1,42 @@
+{
+  "Layout": [
+    "AspectRatio",
+    "Box",
+    "Center",
+    "Container",
+    "Flex",
+    "HStack / Row",
+    "Stack",
+    "VStack / Column",
+    "ZStack"
+  ],
+  "Forms": [
+    "Button",
+    "Pressable",
+    "Checkbox",
+    "FormControl",
+    "IconButton",
+    "Input",
+    "Link",
+    "Radio",
+    "Select",
+    "Slider",
+    "Switch",
+    "TextArea"
+  ],
+  "Data Display": ["Badge", "Divider"],
+  "Feedback": ["Alert", "Progress", "Skeleton", "Spinner", "Toast"],
+  "Typography": ["Text", "Heading"],
+  "Overlay": ["AlertDialog", "Menu", "Modal", "Popover", "Tooltip"],
+  "Disclosure": ["ActionSheet"],
+  "Media and Icons": ["Avatar", "Icon", "Image"],
+  "React Native Components": [
+    "ScrollView",
+    "View",
+    "KeyboardAvoidingView",
+    "StatusBar",
+    "FlatList",
+    "SectionList"
+  ],
+  "Others": ["Fab", "Hidden"]
+}
