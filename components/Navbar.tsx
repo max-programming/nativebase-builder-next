@@ -11,6 +11,7 @@ const Navbar = () => {
         justifyContent='space-between'
         alignItems='center'
         w='100%'
+        h='10vh'
       >
         <HStack alignItems='center'>
           <Text color='white' fontSize='20' fontWeight='semibold'>

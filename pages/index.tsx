@@ -1,10 +1,10 @@
 import { LeftSidebar } from '@/components/LeftSidebar';
 import { Navbar } from '@/components/Navbar';
 import RightSidebar from '@/components/rightSidebar';
+import { useComponentStore } from '@/store/useComponentsStore';
 import { renderComponent } from '@/utils/renderComponent';
-import { Box, Flex, Center, Heading, Button } from 'native-base';
-import React, { ReactNode } from 'react';
-import { useState } from 'react';
+import { Box, Flex, Center, Button, Input } from 'native-base';
+import React from 'react';
 import {
   DragDropContext,
   Droppable,
@@ -13,13 +13,14 @@ import {
 } from 'react-beautiful-dnd';
 
 const HomePage = () => {
-  const [canvasComps, setCanvasComps] = useState<ReactNode>(<></>);
+  const { components, addComponent } = useComponentStore();
+
   const handleDragEnd = (result: DropResult, provided: ResponderProvided) => {
     const { destination, draggableId } = result;
 
     if (!destination) return;
     if (destination.droppableId === 'canvas') {
-      renderComponent(draggableId, setCanvasComps);
+      renderComponent(draggableId, addComponent);
     }
   };
 
@@ -50,13 +51,13 @@ const HomePage = () => {
                   {/* <Heading color='gray.500'>
                     Drag some component to start coding without code!
                   </Heading> */}
-                  {canvasComps}
+                  {components.map(Comp => Comp)}
                 </Center>
               </Box>
             )}
           </Droppable>
           <Box flex={1}>
-            <RightSidebar />
+            <RightSidebar canvasComps={components} />
           </Box>
         </Flex>
       </DragDropContext>
