@@ -14,14 +14,15 @@ import {
 import { ImageBackground } from 'react-native';
 
 const HomePage = () => {
-  const { components, addComponent, addImport,globalStyles } = useComponentStore();
+  const { components, addComponent, addImport, globalStyles } =
+    useComponentStore();
 
   const handleDragEnd = (result: DropResult, provided: ResponderProvided) => {
     const { destination, draggableId } = result;
 
     if (!destination) return;
     if (destination.droppableId === 'canvas') {
-      renderComponent(draggableId, addComponent, addImport,globalStyles);
+      renderComponent(draggableId, addComponent, addImport, globalStyles);
     }
   };
 
@@ -76,7 +77,7 @@ const HomePage = () => {
                         code!
                       </Heading>
                     )}
-                    {components.map(Comp => Comp)}
+                    {components.map((Comp, idx) => Comp)}
                   </Center>
                 </ImageBackground>
               </Box>
