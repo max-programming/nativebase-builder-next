@@ -1,14 +1,20 @@
-import { CheckIcon, Flex, Input, Select, Text } from 'native-base'
+import { useComponentStore } from '@/store/useComponentsStore';
+import { Button, CheckIcon, Flex, Input, Select, Text } from 'native-base'
 import React from 'react'
 
 export default function BackgroundsContent() {
     const [overlay, setOverlay] = React.useState("visible")
+    const {updateStyles,globalStyles, editComponents,components} = useComponentStore();
     return (
         <Flex direction='row' wrap="wrap">
 
             <Flex direction='row' p={2}>
                 <Text> Colour </Text>
-                <Input width={20} />
+                <Input width={20} onChangeText={(e) => {
+         updateStyles({ bg: e })
+         if(!!e) editComponents(0, <Button {...globalStyles} bg={e} >Button</Button>)
+ 
+        }} />
             </Flex>
 
             <Flex direction="row" justifyContent="space-between" px={2} alignItems="center" my={2}>
