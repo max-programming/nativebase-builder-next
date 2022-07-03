@@ -11,6 +11,7 @@ import {
   DropResult,
   ResponderProvided,
 } from 'react-beautiful-dnd';
+import { ImageBackground } from 'react-native';
 
 const HomePage = () => {
   const { components, addComponent, addImport } = useComponentStore();
@@ -47,19 +48,31 @@ const HomePage = () => {
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-                <Center mt='10' zIndex='10'>
-                  {!components.length && (
-                    <Heading
-                      fontSize={'30'}
-                      color='gray.500'
-                      textAlign={'center'}
-                    >
-                      Drag components to start building your product without
-                      code!
-                    </Heading>
-                  )}
-                  {components.map(Comp => Comp)}
-                </Center>
+                <ImageBackground
+                  source={{
+                    uri: 'https://i.pinimg.com/originals/af/cc/7d/afcc7dd829be97c8e5eeb76ec40a86ff.png',
+                  }}
+                  resizeMode='cover'
+                  style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Center mt='10' zIndex='10' h='full' mr='3'>
+                    {!components.length && (
+                      <Heading
+                        fontSize={'20'}
+                        color='gray.500'
+                        textAlign={'center'}
+                        maxW='xs'
+                      >
+                        Drag components to start building your product without
+                        code!
+                      </Heading>
+                    )}
+                    {components.map(Comp => Comp)}
+                  </Center>
+                </ImageBackground>
               </Box>
             )}
           </Droppable>

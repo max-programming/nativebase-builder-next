@@ -37,7 +37,7 @@ const Navbar = () => {
               width='55px'
               height='61px'
               marginTop={1}
-              src='https://docs.nativebase.io/_next/image?url=https%3A%2F%2Fdocs.nativebase.io%2Fimg%2Fnativebaselogo.svg&w=48&q=100'
+              src='/images/nativebase-logo.svg'
               alt='NativeBase Logo'
             />
             <Text
