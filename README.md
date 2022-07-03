@@ -3,7 +3,9 @@
 
 Visual Editor for **NativeBase**
 
-NB Builder is a visual editor for the best component library for React Native: **NativeBase** 🤗.
+NativeBase Builder is a visual editor for the best component library for React Native: **NativeBase** 🤗.
+
+It was built at the [NativeBase + iNeuron Hackathon](https://nativebase.io/hackathon) 
 
 
 ## Features
@@ -38,6 +40,20 @@ Start the server
 ```bash
 npm run dev
 ```
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at the [issues(https://github.com/max-programming/nativebase-builder-next/issues) panel
+
+
+## Contributing
+
+Contributions are always welcome!
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## Authors
