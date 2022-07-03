@@ -48,7 +48,7 @@ npm run dev
 
 ## Feedback
 
-If you have any feedback, please reach out to us at the [issues(https://github.com/max-programming/nativebase-builder-next/issues) panel
+If you have any feedback, please reach out to us at the [issues](https://github.com/max-programming/nativebase-builder-next/issues) panel
 
 
 ## Contributing
