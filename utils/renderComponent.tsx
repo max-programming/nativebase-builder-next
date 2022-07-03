@@ -52,8 +52,9 @@ import {
 export const renderComponent = (
   draggableId: string,
   addComponent: (comp: ReactNode) => void,
-  addImport: (imp: string) => void
-) => {
+  addImport: (imp: string) => void,
+  globalStyles:any
+  ) => {
   const data = [{
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
     fullName: "Aafreen Khan",
@@ -89,10 +90,11 @@ export const renderComponent = (
     title: "Cyan",
     data: ["cyan.100", "cyan.200", "cyan.300", "cyan.400", "cyan.500"]
   }];
+  console.log(globalStyles)
   addImport(draggableId);
   switch (draggableId) {
     case 'Button':
-      addComponent(<Button>Hi</Button>);
+      addComponent(<Button {...globalStyles} >Button</Button>);
       break;
     case 'Checkbox':
       addComponent(<Checkbox value=''>Checkbox</Checkbox>);
