@@ -23,7 +23,7 @@ export const renderComponent = (
   addImport(draggableId);
   switch (draggableId) {
     case 'Button':
-      addComponent(<Button key='btn'>Hi</Button>);
+      addComponent(<Button>Hi</Button>);
       break;
     case 'Checkbox':
       addComponent(
@@ -62,6 +62,7 @@ export const renderComponent = (
     case 'TextArea':
       addComponent(
         <TextArea
+          autoCompleteType={false}
           h={20}
           placeholder='Text Area Placeholder'
           w='75%'

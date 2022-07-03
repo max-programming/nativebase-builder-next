@@ -58,7 +58,13 @@ const HomePage = () => {
                     justifyContent: 'center',
                   }}
                 >
-                  <Center mt='10' zIndex='10' h='full' mr='3'>
+                  <Center
+                    justifyContent='flex-start'
+                    mt='32'
+                    zIndex='10'
+                    h='full'
+                    mr='3'
+                  >
                     {!components.length && (
                       <Heading
                         fontSize={'20'}
