@@ -77,7 +77,9 @@ const HomePage = () => {
                         code!
                       </Heading>
                     )}
-                    {components.map((Comp, idx) => Comp)}
+                    {components.map((Comp, idx) => (
+                      <Box key={idx}>{Comp}</Box>
+                    ))}
                   </Center>
                 </ImageBackground>
               </Box>
