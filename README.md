@@ -17,7 +17,11 @@ It was built at the [NativeBase + iNeuron Hackathon](https://nativebase.io/hacka
 
 ## Tech Stack
 
-React.js, Next.js, TypeScript, NativeBase, Prettier
+- React.js
+- Next.js
+- TypeScript
+- NativeBase
+- Prettier
 
 ## Run Locally
 
