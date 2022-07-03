@@ -26,14 +26,10 @@ export const renderComponent = (
       addComponent(<Button>Hi</Button>);
       break;
     case 'Checkbox':
-      addComponent(
-        <Checkbox value='' key='checkbox'>
-          Checkbox
-        </Checkbox>
-      );
+      addComponent(<Checkbox value=''>Checkbox</Checkbox>);
       break;
     case 'IconButton':
-      addComponent(<IconButton as={<SearchIcon />} key='iconbtn' />);
+      addComponent(<IconButton as={<SearchIcon />} />);
       break;
     case 'Slider':
       addComponent(
@@ -54,7 +50,7 @@ export const renderComponent = (
       );
       break;
     case 'Input':
-      addComponent(<Input placeholder='fndfoee' key='input' />);
+      addComponent(<Input placeholder='fndfoee' />);
       break;
     case 'Switch':
       addComponent(<Switch size='md' />);
@@ -71,11 +67,7 @@ export const renderComponent = (
       );
       break;
     case 'Link':
-      addComponent(
-        <Link href='https://nativebase.io' key='link'>
-          Nativebase
-        </Link>
-      );
+      addComponent(<Link href='https://nativebase.io'>Nativebase</Link>);
       break;
     case 'Radio':
       addComponent(

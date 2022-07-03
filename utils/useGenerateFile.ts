@@ -10,6 +10,7 @@ export const useGenerateFile = (filename: string) => {
 
   let customCode = components.map(txt => reactElementToJSXString(txt)).join('');
   customCode = `
+  import React from "react";
   import { Box, ${imports.join(',')} } from "native-base"
 
   const ${filename} = () => {

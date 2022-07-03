@@ -24,7 +24,7 @@ const RightSidebar = () => {
   return (
     <Flex width={'100%'} bg='coolGray.700' h='100vh' direction='column'>
       <Heading bg='#50B4D0' color='#FFFFFF' fontSize={16} p={4} mb='2'>
-        Flex
+        Document
       </Heading>
       <Flex
         justifyContent='space-between'
