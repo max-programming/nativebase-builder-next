@@ -1,6 +1,6 @@
 import { useComponentStore } from '@/store/useComponentsStore';
-import { Flex, Input, Text } from 'native-base';
-import React from 'react';
+import { Button, Flex, Input, Text } from 'native-base';
+import React, { useEffect } from 'react';
 import {
   AiOutlineArrowDown,
   AiOutlineArrowLeft,
@@ -9,12 +9,17 @@ import {
 } from 'react-icons/ai';
 
 export default function SpacingContent() {
-  const {updateStyles,globalStyles} = useComponentStore();
+  const {updateStyles,globalStyles, editComponents} = useComponentStore();
+  // useEffect(() => {
+  //   editComponents(0, <Button {...globalStyles} >Button</Button>)
+  // }, [globalStyles])
   return (
     <Flex p={2} justifyContent='space-between'>
       <Text>Margin</Text>
       <Input placeholder='All' type='number' onChangeText={(e) => {
-         updateStyles({margin:e})
+        //  updateStyles({margin:e})
+         console.log({e})
+         editComponents(0, <Button p={e} >Button</Button>)
           console.log('globals style safter updating e',globalStyles)
         }} />
       <Flex flexDirection={'row'} p={2} justifyContent='space-between'>
