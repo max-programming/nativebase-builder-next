@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Text } from 'native-base';
+import { Button, Flex, Heading, Text, Tooltip } from 'native-base';
 import React, { useState } from 'react';
 import FlexPropertiesDropdown from './FlexPropertiesDropdownProps';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -8,11 +8,14 @@ import { IoReload } from 'react-icons/io5';
 import { AiFillDelete } from 'react-icons/ai';
 import { BsBook } from 'react-icons/bs';
 import { _renderContent, _renderHeader } from '@/helpers/accordion.helpers';
-import { ReactNode } from 'react';
 import { useGenerateFile } from '@/utils/useGenerateFile';
+import { useComponentStore } from '@/store/useComponentsStore';
 
-const RightSidebar = ({ canvasComps }: { canvasComps: ReactNode[] }) => {
+const RightSidebar = () => {
   const { copy, customCode } = useGenerateFile('CustomComponent');
+  const [duplicateComponent] = useComponentStore(state => [
+    state.duplicateComponent,
+  ]);
   const [activeSections, setActiveSections] = useState([]);
 
   const _updateSections = (_activeSections: any) => {
@@ -34,11 +37,18 @@ const RightSidebar = ({ canvasComps }: { canvasComps: ReactNode[] }) => {
         width={250}
         marginTop={2}
       >
-        <FiCode size={16} color='#FFFFFF' />
-        <Button
-          leftIcon={<FiCopy size={16} color='#FFFFFF' />}
-          onPress={() => copy(customCode)}
-        ></Button>
+        <Tooltip label='Copy Component Code'>
+          <Button
+            leftIcon={<FiCode size={16} color='#FFFFFF' />}
+            onPress={() => copy(customCode)}
+          />
+        </Tooltip>
+        <Tooltip label='Duplicate'>
+          <Button
+            leftIcon={<FiCopy size={16} color='#FFFFFF' />}
+            onPress={duplicateComponent}
+          />
+        </Tooltip>
         <FiEdit size={16} color='#FFFFFF' />
         <IoReload size={16} color='#FFFFFF' />
         <AiFillDelete size={16} color='#FFFFFF' />

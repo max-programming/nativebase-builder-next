@@ -77,7 +77,7 @@ const HomePage = () => {
             )}
           </Droppable>
           <Box flex={1}>
-            <RightSidebar canvasComps={components} />
+            <RightSidebar />
           </Box>
         </Flex>
       </DragDropContext>
