@@ -3,7 +3,7 @@ import { Navbar } from '@/components/Navbar';
 import RightSidebar from '@/components/rightSidebar';
 import { useComponentStore } from '@/store/useComponentsStore';
 import { renderComponent } from '@/utils/renderComponent';
-import { Box, Flex, Center, Button, Input } from 'native-base';
+import { Box, Flex, Center, Button, Input, Heading } from 'native-base';
 import React from 'react';
 import {
   DragDropContext,
@@ -13,14 +13,14 @@ import {
 } from 'react-beautiful-dnd';
 
 const HomePage = () => {
-  const { components, addComponent } = useComponentStore();
+  const { components, addComponent, addImport } = useComponentStore();
 
   const handleDragEnd = (result: DropResult, provided: ResponderProvided) => {
     const { destination, draggableId } = result;
 
     if (!destination) return;
     if (destination.droppableId === 'canvas') {
-      renderComponent(draggableId, addComponent);
+      renderComponent(draggableId, addComponent, addImport);
     }
   };
 
@@ -48,9 +48,16 @@ const HomePage = () => {
                 {...provided.droppableProps}
               >
                 <Center mt='10' zIndex='10'>
-                  {/* <Heading color='gray.500'>
-                    Drag some component to start coding without code!
-                  </Heading> */}
+                  {!components.length && (
+                    <Heading
+                      fontSize={'30'}
+                      color='gray.500'
+                      textAlign={'center'}
+                    >
+                      Drag components to start building your product without
+                      code!
+                    </Heading>
+                  )}
                   {components.map(Comp => Comp)}
                 </Center>
               </Box>

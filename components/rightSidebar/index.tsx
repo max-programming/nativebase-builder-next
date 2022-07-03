@@ -8,16 +8,12 @@ import { IoReload } from 'react-icons/io5';
 import { AiFillDelete } from 'react-icons/ai';
 import { BsBook } from 'react-icons/bs';
 import { _renderContent, _renderHeader } from '@/helpers/accordion.helpers';
-import useCopyToClipboard from '@/utils/useCopyToClipboard';
-import reactElementToJSXString from 'react-element-to-jsx-string';
 import { ReactNode } from 'react';
+import { useGenerateFile } from '@/utils/useGenerateFile';
 
 const RightSidebar = ({ canvasComps }: { canvasComps: ReactNode[] }) => {
+  const { copy, customCode } = useGenerateFile('CustomComponent');
   const [activeSections, setActiveSections] = useState([]);
-  const [, copy] = useCopyToClipboard();
-
-  let txt = canvasComps.map(txt => reactElementToJSXString(txt)).join('');
-  txt = `<>${txt}</>`;
 
   const _updateSections = (_activeSections: any) => {
     setActiveSections(_activeSections);
@@ -41,22 +37,17 @@ const RightSidebar = ({ canvasComps }: { canvasComps: ReactNode[] }) => {
         <FiCode size={16} color='#FFFFFF' />
         <Button
           leftIcon={<FiCopy size={16} color='#FFFFFF' />}
-          onPress={() => copy(txt)}
+          onPress={() => copy(customCode)}
         ></Button>
         <FiEdit size={16} color='#FFFFFF' />
-
-        {/* <Entypo name="code" size={16} color="#FFFFFF" /> */}
-        {/* <Feather name="edit" size={16} color="#FFFFFF" /> */}
-        {/* <Feather name="copy" size={16} color="#FFFFFF" /> */}
         <IoReload size={16} color='#FFFFFF' />
         <AiFillDelete size={16} color='#FFFFFF' />
         <BsBook size={16} color='#FFFFFF' />
-        {/* <Ionicons name="reload" size={16} color="#FFFFFF" /> */}
-        {/* <SimpleLineIcons name="docs" size={16} color="#FFFFFF" /> */}
-        {/* <MaterialIcons name="delete-outline" size={16} color="#FFFFFF" /> */}
       </Flex>
       <FlexPropertiesDropdown />
       <Accordion
+        sectionContainerStyle={{ paddingVertical: 8 }}
+        containerStyle={{ paddingVertical: 8 }}
         sections={SECTIONS}
         activeSections={activeSections}
         renderHeader={_renderHeader}

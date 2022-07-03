@@ -13,7 +13,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 const LeftSidebar = () => {
   return (
-    <Flex bg='coolGray.700' h='90vh' p='5' w={350} overflowY='scroll'>
+    <Flex bg='coolGray.700' h='100vh' p='5' w={350} overflowY='scroll'>
       <Box>
         {Object.keys(components).map((category, idx) => (
           <Box key={idx} my='2'>

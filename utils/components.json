@@ -1,20 +1,7 @@
 {
-  "Layout": [
-    "AspectRatio",
-    "Box",
-    "Center",
-    "Container",
-    "Flex",
-    "HStack / Row",
-    "Stack",
-    "VStack / Column",
-    "ZStack"
-  ],
   "Forms": [
     "Button",
-    "Pressable",
     "Checkbox",
-    "FormControl",
     "IconButton",
     "Input",
     "Link",
