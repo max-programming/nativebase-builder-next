@@ -92,17 +92,13 @@ export const renderComponent = (
   addImport(draggableId);
   switch (draggableId) {
     case 'Button':
-      addComponent(<Button key='btn'>Button</Button>);
+      addComponent(<Button>Hi</Button>);
       break;
     case 'Checkbox':
-      addComponent(
-        <Checkbox value='' key='checkbox'>
-          Checkbox
-        </Checkbox>
-      );
+      addComponent(<Checkbox value=''>Checkbox</Checkbox>);
       break;
     case 'IconButton':
-      addComponent(<IconButton as={<SearchIcon />} key='iconbtn' />);
+      addComponent(<IconButton as={<SearchIcon />} />);
       break;
     case 'Hidden':
       addComponent(<Hidden>
@@ -156,11 +152,7 @@ export const renderComponent = (
       );
       break;
     case 'Link':
-      addComponent(
-        <Link href='https://nativebase.io' key='link'>
-          Nativebase
-        </Link>
-      );
+      addComponent(<Link href='https://nativebase.io'>Nativebase</Link>);
       break;
     case 'Radio':
       addComponent(
