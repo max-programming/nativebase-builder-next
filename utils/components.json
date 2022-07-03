@@ -12,15 +12,13 @@
     "TextArea"
   ],
   "Data Display": ["Badge", "Divider"],
-  "Feedback": ["Alert", "Progress", "Skeleton", "Spinner", "Toast"],
+  "Feedback": ["Alert", "Progress", "Skeleton", "Spinner"],
   "Typography": ["Text", "Heading"],
-  "Overlay": ["AlertDialog", "Menu", "Modal", "Popover", "Tooltip"],
-  "Disclosure": ["ActionSheet"],
+  "Overlay": ["Menu",  "Tooltip"],
   "Media and Icons": ["Avatar", "Icon", "Image"],
   "React Native Components": [
     "ScrollView",
     "View",
-    "KeyboardAvoidingView",
     "StatusBar",
     "FlatList",
     "SectionList"
