@@ -18,7 +18,7 @@ interface ComponentState {
 export const useComponentStore = create<ComponentState>(set => ({
   imports: [],
   components: [],
-  globalStyles: { m:0, p:0 },
+  globalStyles: {},
   editComponents: (id, component) => set(state => {
     const comps = state.components.map((comp, idx) => {
       if (idx === id) return component
