@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Text, Tooltip } from 'native-base';
+import { Button, Flex, Heading, Link, Text, Tooltip } from 'native-base';
 import React, { useState } from 'react';
 import FlexPropertiesDropdown from './FlexPropertiesDropdownProps';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -32,9 +32,7 @@ const RightSidebar = () => {
         alignItems='center'
         mx={4}
         px={4}
-        /*@ts-ignore*/
-        cursor='pointer'
-        width={250}
+        width='xs'
         marginTop={2}
       >
         <Tooltip label='Copy Component Code'>
@@ -49,10 +47,6 @@ const RightSidebar = () => {
             onPress={duplicateComponent}
           />
         </Tooltip>
-        <FiEdit size={16} color='#FFFFFF' />
-        <IoReload size={16} color='#FFFFFF' />
-        <AiFillDelete size={16} color='#FFFFFF' />
-        <BsBook size={16} color='#FFFFFF' />
       </Flex>
       <FlexPropertiesDropdown />
       <Accordion
