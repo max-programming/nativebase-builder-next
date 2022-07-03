@@ -15,6 +15,10 @@ It was built at the [NativeBase + iNeuron Hackathon](https://nativebase.io/hacka
 - Code exporting in `.jsx` and `.tsx`
 - Copy the code feature
 
+## Tech Stack
+
+React.js, Next.js, TypeScript, NativeBase, Prettier
+
 ## Run Locally
 
 Clone the project
